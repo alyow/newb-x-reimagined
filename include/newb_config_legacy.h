@@ -34,7 +34,7 @@
 #define NL_TONEMAP_TYPE 3   // 1:Exponential, 2:Reinhard, 3:Extended Reinhard, 4:ACES
 #define NL_CONSTRAST 0.75   // 0.3 low ~ 2.0 high
 #define NL_EXPOSURE 1.7   // [toggle] 0.5 dark ~ 3.0 bright
-//#define NL_SATURATION 1.4 // [toggle] 0.0 grayscale ~ 4.0 super saturated
+//#define NL_SATURATION 1.1 // [toggle] 0.0 grayscale ~ 4.0 super saturated
 //#define NL_TINT vec3(1.0,0.75,0.5) // [toggle] color overlay
 
 /* Terrain lighting */
@@ -147,31 +147,78 @@
 /* these are config of different subpacks. dont change! */
 /* names in pack.sh */
 
-#ifdef NO_WAVE_NO_FOG
-  #define NO_WAVE
-  #define NO_FOG
-#endif
-
-#ifdef NO_FOG
-  #undef NL_FOG_TYPE
-  #define NL_FOG_TYPE 0
-#endif
-
-#ifdef NO_WAVE
+#ifdef LOW
   #undef NL_PLANTS_WAVE
   #undef NL_LANTERN_WAVE
   #undef NL_UNDERWATER_WAVE
   #undef NL_WATER_WAVE
   #undef NL_RAIN_MIST_OPACITY
+  #undef NL_CLOUD_TYPE
+  #define NL_CLOUD_TYPE 0
+  #undef NL_FOG_TYPE
+  #define NL_FOG_TYPE 0
 #endif
 
-#ifdef CHUNK_ANIM
+#ifdef MEDIUM
+  #undef NL_CLOUD_TYPE 
+  #define NL_CLOUD_TYPE 1
+  #define NL_CLOUD_SHADOW
+  #define NL_AURORA 3.1
+#endif
+
+#ifdef HIGH
+  #define NL_CHUNK_LOAD_ANIM 100.0
+  #define NL_CLOUD2_MULTILAYER
+  #define NL_EXTRA_PLANTS_WAVE
+  #define NL_AURORA 3.0
+#endif
+
+#ifdef COMP_AURORA
+  #define NL_EXPOSURE 1.7
+  #define NL_SATURATION 1.1
+  #define NL_GLOW_TEX 5.0
+  #define NL_PLANTS_WAVE 0.05
+  #define NL_EXTRA_PLANTS_WAVE
+  #define NL_AURORA 3.0
+#endif
+
+#ifdef COMP_STYLE
+  #define NL_EXPOSURE 1.7
+  #define NL_SATURATION 1.1
+  #define NL_GLOW_TEX 5.0
+  #define NL_PLANTS_WAVE 0.05
+  #define NL_EXTRA_PLANTS_WAVE
+  #undef NL_AURORA 3.0
+#endif
+
+#ifdef CUSTOM
+  #define NL_EXPOSURE 1.7
+  #define NL_CLOUD2_MULTILAYER
+  #define NL_AURORA 3.1
   #define NL_CHUNK_LOAD_ANIM 100.0
 #endif
 
-#ifdef ROUNDED_CLOUDS
+#ifdef DOUBLE_CLOUD_AURORA
+  #define NL_CLOUD2_MULTILAYER
+  #define NL_AURORA 3.0
+  #define NL_BLINKING_TORCH
+#endif
+
+#ifdef DOUBLE_CLOUD
+  #define NL_CLOUD2_MULTILAYER
+  #undef NL_AURORA 3.0
+#endif
+
+#ifdef AURORA
+  #undef NL_CLOUD2_MULTILAYER
+  #define NL_AURORA 3.0
+  #define NL_BLINKING_TORCH
+#endif
+
+#ifdef DEFAULT
   #undef NL_CLOUD_TYPE
   #define NL_CLOUD_TYPE 2
+  #undef NL_AURORA 3.0
 #endif
 
 #endif
