@@ -15,33 +15,45 @@ DEFAULT_MATERIALS="RenderChunk Clouds Sky EndSky LegacyCubemap Actor SunMoon"
 #  NAMES     = names/descriptions for options
 #  MATERIALS = materials to compile for options
 SUBPACK_OPTIONS=(
-  ROUNDED_CLOUDS
-  CHUNK_ANIM
-  NO_WAVE_NO_FOG
-  NO_FOG
-  NO_WAVE
+  LOW
+  MEDIUM
+  HIGH
+  COMP_AURORA
+  COMP_STYLE
+  CUSTOM
+  DOUBLE_CLOUD_AURORA
+  DOUBLE_CLOUD
+  AURORA
   DEFAULT
 )
 SUBPACK_NAMES=(
-  "Rounded Clouds"
-  "Chunk loading animation"
-  "No wave, No fog"
-  "No fog"
-  "No wave"
-  "Default"
+  "§aLow§r"
+  "§gMedium§r"
+  "§cHigh§r"
+  "§eComplementary Reimagined Style§r - Aurora"
+  "§eComplementary Reimagined Style§r"
+  "§hCustom§r"
+  "§bNewB Reimagined§r - Double Cloud Aurora"
+  "§bNewB Reimagined§r - Double Cloud Layers"
+  "§bNewB Reimagined§r - Aurora"
+  "§bNewB Reimagined§r - Default"
 )
 SUBPACK_MATERIALS=(
-  "Clouds"
+  "RenderChunk Clouds"
+  "RenderChunk Clouds"
+  "RenderChunk Clouds"
+  "RenderChunk Clouds Sky LegacyCubemap"
+  "RenderChunk Clouds Sky LegacyCubemap" 
+  "RenderChunk Clouds Sky LegacyCubemap"
+  "RenderChunk Clouds"
+  "RenderChunk Clouds"
+  "RenderChunk Clouds"
   "RenderChunk"
-  "RenderChunk"
-  "RenderChunk"
-  "RenderChunk"
-  ""
 )
 
 BUILD_SCRIPT="./build.sh"
 PACK_DIR="pack"
-CONFIG_FILE="include/newb_config_legacy.h"
+CONFIG_FILE="include/newb/config.h"
 PLATFORM="android"
 
 # version format: tag.commits
