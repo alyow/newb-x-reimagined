@@ -45,9 +45,9 @@ SUBPACK_MATERIALS=(
   "RenderChunk Clouds Sky LegacyCubemap"
   "RenderChunk Clouds Sky LegacyCubemap" 
   "RenderChunk Clouds Sky LegacyCubemap"
+  "RenderChunk Clouds Sky"
   "RenderChunk Clouds"
-  "RenderChunk Clouds"
-  "RenderChunk Clouds"
+  "RenderChunk Clouds Sky"
   "RenderChunk"
 )
 
