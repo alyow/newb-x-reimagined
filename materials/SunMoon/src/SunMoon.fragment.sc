@@ -11,6 +11,6 @@ void main() {
   vec4 color = texture2D(s_SunMoonTexture, v_texcoord0);
   color.rgb *= SunMoonColor.rgb;
   float tr = 1.0 - SunMoonColor.a;
-  color.a *= 1.0 - tr*tr*tr;
+  color.a *= 2.5 - tr*tr*tr;
   gl_FragColor = color;
 }
